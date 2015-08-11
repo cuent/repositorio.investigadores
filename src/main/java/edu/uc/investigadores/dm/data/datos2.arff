@@ -1,0 +1,15 @@
+@relation 'papers-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.StringToNominal-Rlast-weka.filters.unsupervised.attribute.Reorder-R2,1'
+
+@attribute keywords {'Geospatial and statistical information, INSPIRE, RDF, Linked Data','RESTful service, semantic annotation, Structural Analysis, Petri Nets','Web Feature Services, Linked Data','AGVs, Control Software,Modular Models, Structural Analysis','Petri Nets, Deadlock Analysis, Resource Allocation Systems, RDF, RESTful service','Linked Data, semantic annotation, Web Feature Services, Graph Theory','Open CourseWare, Social Software','Open CourseWare, Retrieval and Connsumption of linked data','Social Software'}
+@attribute autor {vs,np,me}
+
+@data
+'Geospatial and statistical information, INSPIRE, RDF, Linked Data',vs
+'RESTful service, semantic annotation, Structural Analysis, Petri Nets',vs
+'Web Feature Services, Linked Data',vs
+'AGVs, Control Software,Modular Models, Structural Analysis',me
+'Petri Nets, Deadlock Analysis, Resource Allocation Systems, RDF, RESTful service',me
+'Linked Data, semantic annotation, Web Feature Services, Graph Theory',me
+'Open CourseWare, Social Software',np
+'Open CourseWare, Retrieval and Connsumption of linked data',np
+'Social Software',np
