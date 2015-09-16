@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uc.investigadores.dm.model;
+package edu.uc.investigadores.dm.main;
 
 import edu.uc.investigadores.dm.model.configuration.Algorithm;
 import edu.uc.investigadores.dm.model.configuration.Configuration;
@@ -13,25 +13,23 @@ import edu.uc.investigadores.dm.model.experiment.Experiment;
 import edu.uc.investigadores.dm.model.platform.Filter;
 import edu.uc.investigadores.dm.model.platform.Platform;
 import edu.uc.investigadores.dm.model.platform.SimpleKMeans;
-import edu.uc.investigadores.dm.model.configuration.KMeans;
 import edu.uc.investigadores.dm.model.platform.EM;
 import edu.uc.investigadores.dm.model.platform.HierarchicalClusterer;
 import edu.uc.investigadores.dm.model.platform.NumericToNominal;
 import edu.uc.investigadores.dm.model.platform.Remove;
-import weka.datagenerators.Test;
 
 /**
  *
  * @author cuent
  */
-public class test {
+public class Test {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        test t = new test();
+        Test t = new Test();
         t.experiment2();
 //        Data d = new Data();
 //        d.testLoad("src/main/java/edu/uc/investigadores/dm/data/text.arff");
