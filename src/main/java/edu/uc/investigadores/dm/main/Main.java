@@ -8,6 +8,7 @@ package edu.uc.investigadores.dm.main;
 import edu.uc.investigadores.dm.implementation.cluster.AbstractCluster;
 import edu.uc.investigadores.dm.implementation.cluster.ContextCluster;
 import edu.uc.investigadores.dm.implementation.cluster.KMeans;
+import edu.uc.investigadores.dm.implementation.db.mysql.ReadFromDatabase;
 
 /**
  *
@@ -18,14 +19,20 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        String pathFile="src/main/java/edu/uc/investigadores/dm/data/datos1.arff";
+        String pathFile = "src/main/java/edu/uc/investigadores/dm/data/datos1.arff";
         if (pathFile.trim().equals("")) {
             System.out.println(args.length);
         } else {
-            AbstractCluster kmeans = new KMeans()
+            KMeans kmeans = new KMeans()
                     .setPreserveInstancesOrder(true);
+            
+            String[] options=kmeans.getOptions();
+            for (String option : options) {
+                System.out.println(option);
+            }
+            
             System.out.println("===== Usage: java " + kmeans.getNameCluster() + " =====");
             System.out.println("===== Loaded Dataset <fileData> " + pathFile + " =====");
 
@@ -37,6 +44,8 @@ public class Main {
             System.out.println("===== Results of each instance =====");
             cc.printInstances();
         }
+
+        ReadFromDatabase rfdb = new ReadFromDatabase();
     }
-    
+
 }
