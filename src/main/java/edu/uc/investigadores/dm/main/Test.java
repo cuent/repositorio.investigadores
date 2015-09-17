@@ -161,13 +161,13 @@ public class Test {
         c.addParameter(new Parameter("-N", "20000"));
         kmeans.addConfiguration(c);
 
-        c = new Configuration();
-        c.addParameter(new Parameter("-N", "50000"));
-        kmeans.addConfiguration(c);
-
-        c = new Configuration();
-        c.addParameter(new Parameter("-N", "90000"));
-        kmeans.addConfiguration(c);
+//        c = new Configuration();
+//        c.addParameter(new Parameter("-N", "50000"));
+//        kmeans.addConfiguration(c);
+//
+//        c = new Configuration();
+//        c.addParameter(new Parameter("-N", "90000"));
+//        kmeans.addConfiguration(c);
 
         c = new Configuration();
         c.addParameter(new Parameter("-N", "-1"));
@@ -197,7 +197,7 @@ public class Test {
         c.addParameter(new Parameter("-R", "2"));
 
         Data data = new Data();
-        data.testLoad("src/main/java/edu/uc/investigadores/dm/data/data.arff");
+        data.testLoad("src/main/java/edu/uc/investigadores/dm/data/data_join_keywords.arff");
 
         Filter remove = new Remove();
 
