@@ -1,0 +1,11 @@
+@relation papers-weka.filters.unsupervised.attribute.Remove-R2
+
+@attribute autor {'Victor Saquicela','Nelson Piedra','Mauricio Espinoza','Janeth Chicaiza','Juan Perez'}
+@attribute keywords string
+
+@data
+'Victor Saquicela','Linked Data,Domain Ontology,Semantic Web'
+'Nelson Piedra','Linked Data,Domain Ontology,Use Case'
+'Mauricio Espinoza','Domain Ontology,Linked Data,Semantic Annotation'
+'Janeth Chicaiza','GIS,Open GIS,Integrated Geo Systems'
+'Juan Perez','Open GIS,GIS'

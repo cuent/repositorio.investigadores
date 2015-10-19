@@ -8,7 +8,7 @@ package edu.uc.investigadores.dm.model.experiment;
 import edu.uc.investigadores.dm.model.configuration.Algorithm;
 import edu.uc.investigadores.dm.model.configuration.Column;
 import edu.uc.investigadores.dm.model.configuration.Configuration;
-import edu.uc.investigadores.dm.model.platform.Property;
+import edu.uc.investigadores.dm.platform.Property;
 import edu.uc.investigadores.dm.model.configuration.Result;
 import edu.uc.investigadores.dm.model.configuration.Row;
 import edu.uc.investigadores.dm.model.configuration.Table;

@@ -5,7 +5,7 @@
  */
 package edu.uc.investigadores.dm.model.configuration;
 
-import edu.uc.investigadores.dm.model.platform.Platform;
+import edu.uc.investigadores.dm.platform.Platform;
 
 /**
  *

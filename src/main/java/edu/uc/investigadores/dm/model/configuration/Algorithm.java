@@ -5,8 +5,8 @@
  */
 package edu.uc.investigadores.dm.model.configuration;
 
-import edu.uc.investigadores.dm.model.platform.Platform;
-import edu.uc.investigadores.dm.model.platform.Property;
+import edu.uc.investigadores.dm.platform.Platform;
+import edu.uc.investigadores.dm.platform.Property;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +78,7 @@ public abstract class Algorithm {
             stringResult.append("\n");
         }
 
-        return "Algorithm: " + this.getNameAlgorithm() + "\n\t=>Platform:" + this.getPlatform().getNamePlatform() + "\n\t=>Type:" + this.getNameType() + "\n\t" + configurations + "\n\tResult=\n" + stringResult;
+        return "Algorithm: " + this.getNameAlgorithm() + "\n\t=>Platform:" + this.getPlatform().getNamePlatform() + "\n\t=>Type:" + this.getNameType() + "\n\t" + configurations + "\n\tResult=\n" + stringResult + "\n\n\n\n" ;//+ this.platform;
     }
 
     private StringBuilder header(Row row) {

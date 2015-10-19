@@ -5,7 +5,7 @@
  */
 package edu.uc.investigadores.dm.model.configuration;
 
-import edu.uc.investigadores.dm.model.platform.Property;
+import edu.uc.investigadores.dm.platform.Property;
 import java.util.ArrayList;
 import java.util.List;
 
