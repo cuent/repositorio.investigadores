@@ -4,12 +4,12 @@ Repository Researches
 It is a platform to execute experiments of data/text mining regardless the platform. The platform is under development, for now support clustering and the following algorithms:
 
   * WEKA
-    Kmeans
-    EM
-    Hierarchical Clusterer
+    - Kmeans
+    - EM
+    - Hierarchical Clusterer
 
   * Apache Mahout
-    Kmeans
+    - Kmeans
 
 Building the Source
 --------------------
