@@ -1,0 +1,5 @@
+1,Linked Data,Domain Ontology,Semantic Web
+2,Linked Data,Domain Ontology,Use Case
+3,Domain Ontology,Linked Data,Semantic Annotation
+4,GIS,Open GIS,Integrated Geo Systems
+5,Open GIS,GIS

@@ -13,8 +13,6 @@ import edu.uc.investigadores.dm.platform.Platform;
 import edu.uc.investigadores.dm.platform.filters.Filter;
 import edu.uc.investigadores.dm.platform.filters.mahout.Seq2Sparse;
 import edu.uc.investigadores.dm.platform.filters.mahout.SeqDirectory;
-import edu.uc.investigadores.dm.platform.filters.mahout.SeqDumper;
-import edu.uc.investigadores.dm.platform.mahout.KMeans;
 import org.apache.mahout.common.distance.CosineDistanceMeasure;
 import org.apache.mahout.text.PrefixAdditionFilter;
 
