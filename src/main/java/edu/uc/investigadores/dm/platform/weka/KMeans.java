@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uc.investigadores.dm.platform;
+package edu.uc.investigadores.dm.platform.weka;
 
+import edu.uc.investigadores.dm.platform.Property;
+import edu.uc.investigadores.dm.platform.Statistics;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,11 +19,11 @@ import java.util.logging.Logger;
  *
  * @author cuent
  */
-public class SimpleKMeans extends Weka {
+public class KMeans extends Weka {
 
     private final weka.clusterers.SimpleKMeans kmeans;
 
-    public SimpleKMeans() {
+    public KMeans() {
         kmeans = new weka.clusterers.SimpleKMeans();
     }
 
@@ -33,13 +35,14 @@ public class SimpleKMeans extends Weka {
             kmeans.setPreserveInstancesOrder(true);
             kmeans.buildClusterer(this.getData().getInstances());
 
+            System.out.println("FINISHED BUILDING...");
             Statistics statistics = new Statistics();
             statistics.addProperty(new Property("SquaredError", kmeans.getSquaredError()));
             this.setStatistics(statistics);
 
             System.out.println(getAssignments());
         } catch (Exception ex) {
-            Logger.getLogger(SimpleKMeans.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KMeans.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -86,7 +89,7 @@ public class SimpleKMeans extends Weka {
                 resultado.append("\"\n");
             }
         } catch (Exception ex) {
-            Logger.getLogger(SimpleKMeans.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KMeans.class.getName()).log(Level.SEVERE, null, ex);
         }
         return resultado;
     }

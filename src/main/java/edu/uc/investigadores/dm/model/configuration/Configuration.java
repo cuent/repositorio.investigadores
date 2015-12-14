@@ -17,9 +17,38 @@ public class Configuration {
 
     private List<Parameter> parameters;
     private Result result;
+    private org.apache.hadoop.conf.Configuration configuration;
 
     public Configuration() {
         parameters = new ArrayList<>();
+    }
+
+    /**
+     * Load a configuration of hadoop.
+     *
+     * @param configuration
+     */
+    public Configuration(org.apache.hadoop.conf.Configuration configuration) {
+        parameters = new ArrayList<>();
+        this.configuration = configuration;
+    }
+
+    /**
+     * Get the configuration of hadoop
+     *
+     * @return
+     */
+    public org.apache.hadoop.conf.Configuration getHadoopConfiguration() {
+        return configuration;
+    }
+
+    /**
+     * Set the hadoop configuration
+     *
+     * @param conf
+     */
+    public void setHadoopConfiguration(org.apache.hadoop.conf.Configuration conf) {
+        configuration = conf;
     }
 
     /**
@@ -62,22 +91,6 @@ public class Configuration {
         for (Parameter parameter : parameters) {
             parametersString.append(parameter.toString());
         }
-//        StringBuilder resultString = new StringBuilder();
-//        for (int i = 0; i < result.getTable().getRows().size(); i++) {
-//            resultString.append("\t\t+--------------+\n");
-//            for (Column column : result.getTable().getRows().get(i).getColumns()) {
-//
-//                resultString.append("\t\t|");
-//                resultString.append(((Property) column.getField()).getKey());
-//                resultString.append("  |\n");
-//                resultString.append("\t\t+--------------+\n");
-//                resultString.append("\t\t|");
-//                resultString.append(((Property) column.getField()).getValue());
-//                resultString.append("\t       |\n");
-//                resultString.append("\t\t+--------------+\n");
-//            }
-//        }
-
         return "==>Configuration=" + parametersString + "\n\t";//+ "\n\t==>Result\n" + resultString;
     }
 }

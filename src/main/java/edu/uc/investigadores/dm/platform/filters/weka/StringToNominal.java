@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uc.investigadores.dm.platform.filters;
+package edu.uc.investigadores.dm.platform.filters.weka;
 
-import edu.uc.investigadores.dm.platform.Filter;
-import edu.uc.investigadores.dm.platform.Weka;
+import edu.uc.investigadores.dm.platform.filters.Filter;
+import edu.uc.investigadores.dm.platform.weka.Weka;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import weka.core.Instances;

@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uc.investigadores.dm.platform;
+package edu.uc.investigadores.dm.platform.mahout;
+
+import edu.uc.investigadores.dm.platform.Platform;
 
 /**
  *
  * @author cuent
  */
-public abstract class Weka extends Platform {
+public abstract class Mahout extends Platform{
 
-    public Weka() {
-        this.setNamePlatform("Weka");
+    public Mahout() {
+        this.setNamePlatform("Apache Mahout");
     }
-
 }

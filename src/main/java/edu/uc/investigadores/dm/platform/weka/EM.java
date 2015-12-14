@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uc.investigadores.dm.platform;
+package edu.uc.investigadores.dm.platform.weka;
 
+import edu.uc.investigadores.dm.platform.Property;
+import edu.uc.investigadores.dm.platform.Statistics;
+import edu.uc.investigadores.dm.platform.weka.Weka;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import weka.core.Instance;

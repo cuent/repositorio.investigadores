@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.uc.investigadores.dm.platform;
+package edu.uc.investigadores.dm.platform.weka;
+
+import edu.uc.investigadores.dm.platform.Platform;
 
 /**
  *
  * @author cuent
  */
-public interface Filter {
-    
+public abstract class Weka extends Platform {
+
+    public Weka() {
+        this.setNamePlatform("Weka");
+    }
+
 }

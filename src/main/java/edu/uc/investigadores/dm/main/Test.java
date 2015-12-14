@@ -10,15 +10,15 @@ import edu.uc.investigadores.dm.model.configuration.Configuration;
 import edu.uc.investigadores.dm.model.configuration.Parameter;
 import edu.uc.investigadores.dm.model.experiment.Data;
 import edu.uc.investigadores.dm.model.experiment.Experiment;
-import edu.uc.investigadores.dm.platform.Filter;
+import edu.uc.investigadores.dm.platform.filters.Filter;
 import edu.uc.investigadores.dm.platform.Platform;
-import edu.uc.investigadores.dm.platform.SimpleKMeans;
-import edu.uc.investigadores.dm.platform.EM;
-import edu.uc.investigadores.dm.platform.HierarchicalClusterer;
-import edu.uc.investigadores.dm.platform.filters.NumericToNominal;
-import edu.uc.investigadores.dm.platform.filters.Remove;
-import edu.uc.investigadores.dm.platform.filters.StringToNominal;
-import edu.uc.investigadores.dm.platform.filters.StringToWordVector;
+import edu.uc.investigadores.dm.platform.weka.KMeans;
+import edu.uc.investigadores.dm.platform.weka.EM;
+import edu.uc.investigadores.dm.platform.weka.HierarchicalClusterer;
+import edu.uc.investigadores.dm.platform.filters.weka.NumericToNominal;
+import edu.uc.investigadores.dm.platform.filters.weka.Remove;
+import edu.uc.investigadores.dm.platform.filters.weka.StringToNominal;
+import edu.uc.investigadores.dm.platform.filters.weka.StringToWordVector;
 
 /**
  *
@@ -32,12 +32,12 @@ public class Test {
     public static void main(String[] args) {
 
         Test t = new Test();
-        t.experimentK();
-        //t.experiment4();
+        //t.experimentK();
+        t.experiment4();
     }
 
     public void experimentTest() {
-        Platform p = new SimpleKMeans();
+        Platform p = new KMeans();
 
         Algorithm a = new edu.uc.investigadores.dm.model.configuration.KMeans(p);
         Configuration c = new Configuration();
@@ -73,7 +73,7 @@ public class Test {
     }
 
     public void experiment0() {
-        Platform p = new SimpleKMeans();
+        Platform p = new KMeans();
         Algorithm kmeans = new edu.uc.investigadores.dm.model.configuration.KMeans(p);
 
         Platform pEM = new EM();
@@ -216,7 +216,7 @@ public class Test {
     }
 
     public void experiment1() {
-        Platform pSKM = new SimpleKMeans();
+        Platform pSKM = new KMeans();
         Algorithm kmeans = new edu.uc.investigadores.dm.model.configuration.KMeans(pSKM);
 
         Platform pEM = new EM();
@@ -261,7 +261,7 @@ public class Test {
     }
 
     public void experiment2() {
-        Platform pSKM = new SimpleKMeans();
+        Platform pSKM = new KMeans();
         Algorithm kmeans = new edu.uc.investigadores.dm.model.configuration.KMeans(pSKM);
 
         Platform pEM = new EM();
@@ -316,7 +316,7 @@ public class Test {
     }
 
     public void experiment3() {
-        Platform pSKM = new SimpleKMeans();
+        Platform pSKM = new KMeans();
         Algorithm kmeans = new edu.uc.investigadores.dm.model.configuration.KMeans(pSKM);
 
         Platform pEM = new EM();
@@ -374,7 +374,7 @@ public class Test {
     }
 
     public void experiment4() {
-        Platform pSKM = new SimpleKMeans();
+        Platform pSKM = new KMeans();
         Algorithm kmeans = new edu.uc.investigadores.dm.model.configuration.KMeans(pSKM);
 
         Platform pEM = new EM();
@@ -422,11 +422,11 @@ public class Test {
     }
 
     public void experimentK() {
-        Platform pSKM = new SimpleKMeans();
+        Platform pSKM = new KMeans();
         Algorithm kmeans = new edu.uc.investigadores.dm.model.configuration.KMeans(pSKM);
 
         Configuration c = new Configuration();
-        c.addParameter(new Parameter("-N", "2000"));
+        c.addParameter(new Parameter("-N", "200"));
         kmeans.addConfiguration(c);
 
         c = new Configuration();
