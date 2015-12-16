@@ -27,7 +27,7 @@ public class TestMahout {
      */
     public static void main(String[] args) {
         TestMahout t = new TestMahout();
-        t.test1();
+        t.test2();
     }
 
     public void test1() {
@@ -44,6 +44,51 @@ public class TestMahout {
         c.addParameter(new  Parameter("-xm", "sequential"));
         c.addParameter(new  Parameter("--clustering", "-ow"));
         c.setHadoopConfiguration(new org.apache.hadoop.conf.Configuration());
+        a.addConfiguration(c);
+
+        c = new Configuration();
+        c.addParameter(new Parameter("-i", "mahout_base/original"));
+        c.addParameter(new Parameter("-o", "mahout_base/output"));
+        c.addParameter(new Parameter("-c", "UTF-8"));
+        c.addParameter(new Parameter("-filter", PrefixAdditionFilter.class.getName()));//"edu.uc.investigadores.dm.platform.filters.mahout.AlternatePrefixFilter"));
+        c.setHadoopConfiguration(new org.apache.hadoop.conf.Configuration());
+
+        Filter seqdirectory = new SeqDirectory();
+        ((SeqDirectory) seqdirectory).setConfiguration(c);
+        ((SeqDirectory) seqdirectory).build();
+
+        c = new Configuration();
+        c.addParameter(new Parameter("-i", "mahout_base/output"));
+        c.addParameter(new Parameter("-o", "mahout_base/sparse"));
+        c.addParameter(new Parameter("-x", "60"));
+        c.addParameter(new Parameter("-n", "2"));
+        c.addParameter(new Parameter("-ng", "1"));
+        c.addParameter(new Parameter("-nv", "-ow"));
+        c.setHadoopConfiguration(new org.apache.hadoop.conf.Configuration());
+
+        Filter seq2sparse = new Seq2Sparse();
+        ((Seq2Sparse) seq2sparse).setConfiguration(c);
+        ((Seq2Sparse) seq2sparse).build();
+
+        Experiment e = new Experiment();
+        e.addAlgorithm(a);
+        e.execute();
+    }
+    public void test2() {
+        Platform p = new edu.uc.investigadores.dm.platform.mahout.FuzzyKMeans();
+        Algorithm a = new edu.uc.investigadores.dm.model.configuration.KMeans(p);
+
+        Configuration c = new Configuration();
+        c.addParameter(new Parameter("-i", "mahout_base/sparse/tfidf-vectors"));
+        c.addParameter(new Parameter("-o", "mahout_base/kmeans"));
+        c.addParameter(new Parameter("-c", "mahout_base/kmeans/seed"));
+        c.addParameter(new Parameter("-dm", CosineDistanceMeasure.class.getName()));
+        c.addParameter(new Parameter("-x", "100"));
+        c.addParameter(new Parameter("-m", "1"));
+        c.addParameter(new Parameter("-k", "2000"));
+        //c.addParameter(new Parameter("-xm", "sequential"));
+        c.addParameter(new Parameter("--clustering", "-ow"));
+        //c.setHadoopConfiguration(new org.apache.hadoop.conf.Configuration());
         a.addConfiguration(c);
 
         c = new Configuration();
